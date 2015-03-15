@@ -6,4 +6,11 @@
 
 <body id="location-app">
 	<p id="current-location">
+	<script type="text/javascript">
+	    if (navigator.geolocation) {
+			locationApp.init();
+	    } else { 
+	        alert("Geolocation is not supported by this browser.");
+	    }
+	</script>
 </body>

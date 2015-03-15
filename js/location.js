@@ -18,11 +18,9 @@
 		setTimeout(continueLocating, locateAtMs);
 	};
 
-    if (navigator.geolocation) {
-		continueLocating();
-    } else { 
-        alert("Geolocation is not supported by this browser.");
-    }
+	window.locationApp = {
+		init: continueLocating
+	};
 
 }).call(this);
 
