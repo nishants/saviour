@@ -2,11 +2,13 @@
 	"use strict"
 	var showLocation, 
 		continueLocating;
-		
+
 	showLocation = function(location){
-		var displayText = 	"Lattitude  : " + Math.random() + " <br>" + 
-						   	"Longitude  : " + Math.random() + " <br>" + 
-							"Altitude   : " + Math.random() + " <br>";
+		var location = location.coords;
+		var displayText = 	"Lattitude  : " + location.latitude 	+ " <br>" + 
+						   	"Longitude  : " + location.longitude 	+ " <br>" + 
+							"Altitude   : " + location.altitude 	+ " <br>" + 
+							"Accuracy   : " + location.accuracy;
 
 		document.getElementById("current-location").innerHTML = displayText;		
 	};
