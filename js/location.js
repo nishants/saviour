@@ -1,15 +1,14 @@
 (function(){
 	"use strict"
 	var showLocation, 
-		continueLocating,
-		target = document.getElementById("current-location");
-
+		continueLocating;
+		
 	showLocation = function(location){
 		var displayText = 	"Lattitude  : " + Math.random() + " <br>" + 
 						   	"Longitude  : " + Math.random() + " <br>" + 
 							"Altitude   : " + Math.random() + " <br>";
 
-		target.innerHTML = displayText;		
+		document.getElementById("current-location").innerHTML = displayText;		
 	};
 
 	continueLocating = function(){
