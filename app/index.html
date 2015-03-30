@@ -8,20 +8,36 @@
   <meta name="description" content="An indoor navigation platform.">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/lib/bootstrap.css">
+  <link rel="stylesheet" href="styles/main.css">
 
   <script src="scripts/lib/angular.min.js"></script>
   <script src="scripts/lib/angular-ui-router.min.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/routes.js"></script>
+  <script src="scripts/controllers/app-controller.js"></script>
 
 </head>
 
-<body ng-app="saviour">
+<body ng-app="saviour" ng-controller="AppController" ng-init="loadLocations()">
   <!--[if lt IE 7]>
       p>You are using an <strong>outdated</strong> browser.Pease use chrome to access this app.
     <![endif]-->
-  
+    
+  <div id="search-bar">
+    <form class="centered form-inline input-group">
+      <input type="text" 
+              class="form-control centered"
+              placeholder="e.g. Idigo Retreat"/>
+      <span class="input-group-addon"> 
+        <span role="button" 
+              class="glyphicon glyphicon-search"></span>
+      </button>
+
+    </form>
+  </div>
+    
+  </div>
 </body>
   
 </html>
