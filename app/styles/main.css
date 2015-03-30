@@ -85,3 +85,8 @@ body {
 .centered{
   text-align: center;
 }
+
+.side-padded{
+  padding-right: 10%;
+  padding-left: 10%;
+}

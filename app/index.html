@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/main.css">
 
   <script src="scripts/lib/angular.min.js"></script>
+  <script src="scripts/lib/angular-touch.js"></script>
   <script src="scripts/lib/angular-ui-router.min.js"></script>
   <script src="scripts/app.js"></script>
   <script src="scripts/routes.js"></script>
@@ -19,21 +20,25 @@
 
 </head>
 
-<body ng-app="saviour" ng-controller="AppController" ng-init="loadLocations()">
+<body ng-app="saviour" 
+      id="search-bar" 
+      ng-controller="AppController" 
+      ng-init="loadLocations()">
   <!--[if lt IE 7]>
       p>You are using an <strong>outdated</strong> browser.Pease use chrome to access this app.
     <![endif]-->
     
-  <div id="search-bar">
-    <form class="centered form-inline input-group">
+  <div >
+    
+    <form class="centered form-inline input-group side-padded">
+      
       <input type="text" 
               class="form-control centered"
               placeholder="e.g. Idigo Retreat"/>
-      <span class="input-group-addon"> 
-        <span role="button" 
-              class="glyphicon glyphicon-search"></span>
-      </button>
-
+              
+      <span class="input-group-addon" ng-click="searchPlace()"> 
+        <span role="button"class="glyphicon glyphicon-search"></span>
+      </span>
     </form>
   </div>
     
