@@ -8,8 +8,8 @@
   <meta name="description" content="An indoor navigation platform.">
   <meta name="viewport" content="width=device-width">
 
-  <!--<link rel="stylesheet" href="styles/lib/bootstrap.css">-->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/lib/bootstrap.css">
+  <link rel="stylesheet" href="styles/home.css">
 
   <script src="scripts/lib/jquery.js"></script>
   <script src="scripts/app.js"></script>
@@ -17,9 +17,12 @@
 
 <div id='saviour' isApp>
 
-  <nav id="search-bar" class="container row" isForm>
-    <input id='keyword' type="text" class="cl-md-12 form-control" placeholder="e.g. indigo retreat" isInput/>
-    <span id='search' class="bt bnt-primary form-control" isButton>Search</span>
+  <nav id="search-bar" class="input-group" isForm>
+    <input id='keyword' type="text" class="form-control sharp-border no-right-border" placeholder="e.g. indigo retreat" isInput/>
+    <span id='search' class="input-group-addon blue-color-fill sharp-border no-left-border" isButton>
+      <span class="glyphicon glyphicon-search white-text">
+      </span>
+    </span>
   </nav>
 
   <section id='home-page' isContainer >
@@ -27,7 +30,7 @@
   </section>
 
 
-  <section id='guide-view' isContainer isHidden> <!-- Hideen by default -->
+  <section id='guide-view' isContainer isHidden> <!-- Hidden by default -->
     <img id='current-location' src="" isImage/>
   </section>
 
