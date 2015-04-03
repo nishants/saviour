@@ -1,0 +1,210 @@
+Create own framework.
+no MVC, instead following layers
+	1 : Dom Layer(state of html document) 	- abstracts java dom manipulation i.e. abstracts frameworks like jquery.
+											  Unlike controller twoView way interactions with service.
+											  acts as the interface between application and html document(like scope of angular)
+											  promise based interaction with client(for dom manipolation).
+											  listener based interaction with 
+											  also wires togeher the functional components of service layer.
+
+	2 : Service Layer(stateless) 			- functions for business logic.
+	3 : Data layers(state of data source)	- abstarcts data source like http, local storage, cookies, complex-data-relationships).
+											  guarantees state in sync with data source
+
+	4 : Models(application state)			- (client side) state.
+
+
+Dom layer : models for dom
+
+Dom Layer over $scope 
+$scope works in object oriented style.
+i.e. we set data on its attributes, and angularjs ensures it remains in sync with the DOM and things in DOM remains in sync with values of $scope attributes.
+This leads to inefficient components like digest cycles.
+Instead these actions are modeled as functions, doing it efficiently.
+
+It makes the dom interactions functional.
+
+Should it be called DOM layer instead.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+Analysys of control flow 
+=========================
+Any actin in the application is direct or indirect result of  : 
+	1. a user interaction with page (click , scroll, swipe, type)
+	2. or initialization of the applicaiton.
+
+So why we need a digest cycle  : only to syc in memory data with dom.
+----------------------------------------------------------------------------------------------------------------------------------
+API Design
+==========
+// Configurations
+conf.setLocale("french");
+conf.messages(
+	{
+		locale: "french",
+		errors: {
+			appTitle: "Saviour(in french)"
+			failed_to_search: "Server connection failed(in french)."
+			connection_failed: "Connection failed with server(in french)."
+		}
+	}
+);	
+
+// Application Definition
+// Call this function when views are compiled, configurations loaded and services initialized.
+app.create("saviour", function(app, messages, locationService){
+	
+	var showGuideView = function(path){
+		app.getMapView().hide();
+		app.getDirectionsView().hide();
+		app.getHomePage().hide();
+
+		app.getGuideView().show(searchResult);
+	};
+	
+	var showMapView = function(path){
+		app.getDirectionsView().hide();
+		app.getHomePage().hide();
+		app.getGuideView().hide();
+
+		app.getMapView().show(path);
+	};
+	
+	var showDirectionsView = function(path){
+		app.getHomePage().hide();
+		app.getGuideView().hide();
+		app.getMapView().hide();
+
+		app.getDirectionsView().show(path);
+	};
+
+	var showHomePage = function(){
+		app.getMapView().hide();
+		app.getDirectionsView().hide();
+		app.getGuideView().hide();		
+
+		app.getHomePage().show();
+	};
+
+	var showError = function(message){
+		console.error(message);
+	};
+
+	app.serTitle(messages.get(appTitle));
+
+	// Declare global actions for application
+	app.showHomePage 				= showHomePage;
+	app.showGuideView 			= showGuideView;
+	app.showDirectionsView 	= showDirectionsView;
+	app.showMapView 				= showMapView;
+	app.showError 					= showError;
+
+	// Call this after behaviours are added to the views
+	app.init(function(){
+		// Show home screen before adding type aheads.
+		showHomePage([]);
+		locationService.allLocations()
+		.ok(function(locations){
+			// set options to show in typeahead of home page
+			app.getSearchBar().setLocations(locations);
+		})
+		.err(function(){
+			var error = messages.get("connection_failed")
+			app.showError(error);
+		});
+		
+	});
+
+});
+
+// Add behaviour to views
+// always view, followed by whatever dependency is required
+app.views("search-bar", function(searchBar, app, messges, searchService){
+	var onError = 	function(){
+		app.showError(messges.get("failed_to_search"));
+	}
+
+	var search = function(){
+		// get key from value of isInput with id="keyword" in this view
+		var key = searchBar.getKeyWord();
+		searchService.searchFor(key)
+			.ok(app.showGuideView)
+			.err(onError);
+	};
+
+	var setLocations = function(locations){
+		// access dom service, which runs syns everything after a dom manipulation.
+		// avoid as much as possible, is expensive.
+		app.dom.setLocationsTypeAhead(locations);
+	};
+	// set action on pressing isButton with id="search" in this view
+	searchBar.onPressSearch(search);
+	searchBar.setLocations = setLocations;
+
+};
+
+
+app.views("guide-view", function(view, app, messges, searchService, locationService, controls){
+	var showNext = function(){
+		// Show next hint and image
+	};
+
+	var init = 	function(path){
+		// Change controls
+		controls.swithToGuideView();
+		controls.onNext(showNext);
+
+		// render path on screen
+	};
+
+	//automaticaly set
+	view.onPressSubmit(onSubmit);
+	view.show(init);
+};
+
+
+
+Target HTML 
+==========
+"
+<div id='saviour' isApp>
+	
+	<nav id=search-bar” isForm>
+		<input id='keyword' type=“text” isInput>Search</span>
+		<span id='search' isButton>Search</span>
+	</nav>
+
+	<section id='home-page' isContainer ></section>
+
+	<!-- Hideen by default -->
+	<section id='guide-view' isContainer isHidden>
+		<img id='current-location', src="" isImage></img>
+	</section>
+
+	<section id='directions-view' isContainer isHidden>
+	</section>
+
+	<section id='map-view' isContainer isHidden>
+	</section>
+
+	<div id='view-controls' isContainer isHidden>
+		<span id='show-directions-view' isButton ></span>
+		<span id='show-next' 						isButton isDisabled></span>
+		<span id='show-map-view' 				isButton ></span>
+
+		<!-- controls hidden by default-->
+		<span id='show-guide-view' 			isButton isHidden></span>
+		<span id='back-to-home' 				isButton isHidden></span>
+	</div>
+
+</div>
+"
+
+
+
+
+
+
+

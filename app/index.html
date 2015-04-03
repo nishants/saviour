@@ -8,41 +8,45 @@
   <meta name="description" content="An indoor navigation platform.">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="styles/lib/bootstrap.css">
+  <!--<link rel="stylesheet" href="styles/lib/bootstrap.css">-->
   <link rel="stylesheet" href="styles/main.css">
 
-  <script src="scripts/lib/angular.min.js"></script>
-  <script src="scripts/lib/angular-touch.js"></script>
-  <script src="scripts/lib/angular-ui-router.min.js"></script>
+  <script src="scripts/lib/jquery.js"></script>
   <script src="scripts/app.js"></script>
-  <script src="scripts/routes.js"></script>
-  <script src="scripts/controllers/app-controller.js"></script>
-
 </head>
 
-<body ng-app="saviour" 
-      id="search-bar" 
-      ng-controller="AppController" 
-      ng-init="loadLocations()">
-  <!--[if lt IE 7]>
-      p>You are using an <strong>outdated</strong> browser.Pease use chrome to access this app.
-    <![endif]-->
-    
-  <div >
-    
-    <form class="centered form-inline input-group side-padded">
-      
-      <input type="text" 
-              class="form-control centered"
-              placeholder="e.g. Idigo Retreat"/>
-              
-      <span class="input-group-addon" ng-click="searchPlace()"> 
-        <span role="button"class="glyphicon glyphicon-search"></span>
-      </span>
-    </form>
+<div id='saviour' isApp>
+
+  <nav id="search-bar" class="container row" isForm>
+    <input id='keyword' type="text" class="cl-md-12 form-control" placeholder="e.g. indigo retreat" isInput/>
+    <span id='search' class="bt bnt-primary form-control" isButton>Search</span>
+  </nav>
+
+  <section id='home-page' isContainer >
+
+  </section>
+
+
+  <section id='guide-view' isContainer isHidden> <!-- Hideen by default -->
+    <img id='current-location' src="" isImage/>
+  </section>
+
+  <section id='directions-view' isContainer isHidden>
+  </section>
+
+  <section id='map-view' isContainer isHidden>
+  </section>
+
+  <div id='view-controls' isContainer isHidden>
+    <span id='show-directions-view' isButton ></span>
+    <span id='show-next' 						isButton isDisabled></span>
+    <span id='show-map-view' 				isButton ></span>
+
+    <!-- controls hidden by default(within their parent view)-->
+    <span id='show-guide-view' 			isButton isHidden></span>
+    <span id='back-to-home' 				isButton isHidden></span>
   </div>
-    
-  </div>
-</body>
-  
+
+</div>
+
 </html>
