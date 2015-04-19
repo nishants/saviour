@@ -2,45 +2,48 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>GetMeTo</title>
+    <meta charset="utf-8">
+    <title>GetMeTo</title>
 
-  <meta name="description" content="An indoor navigation platform.">
-  <meta name="viewport" content="width=device-width">
+    <meta name="description" content="An indoor navigation platform.">
+    <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="styles/home.css">
-  <link rel="stylesheet" href="styles/tmp.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/tmp.css">
 
-  <script src="scripts/lib/jquery.js"></script>
-  <script src="scripts/app.js"></script>
+    <script src="scripts/lib/jquery.js"></script>
+    <script src="scripts/app.js"></script>
 </head>
 
 <body id='saviour' class="full-screen" isApp>
 
-  <section id='home-page' class="full-screen" isContainer >
+<section id='home-page' class="full-screen" isContainer>
     <p id="loader-logo" class="" isMessage>Loading....</p>
-  </section>
+</section>
 
-  <section id="search-home" class="full-screen"  isContainer>
+<section id="search-home" class="full-screen" isContainer>
     <p isMessage>get me to</p>
     <input id='keyword' type="text" placeholder="cubicle id,conference room, etc" isInput/>
     <span id='search' isButton/>
-  </section>
+</section>
 
-  <section  id='guide-view' class="full-screen" isContainer>
-    <form   id="search-panel" isForm>
-      <input  id="next-keyword" type="text" isInput/>
-      <span   id="search-next-button" isMessage isButton>search</span>
-    </form>
+<section id='guide-view'
+         class= "full-screen
+                 centered-display
+                 img-background
+                 sample-location-image" isContainer>
 
-    <p id="next-instruction" class="float-over-page blackboard card">
-      Welcome to my room, go straight to find washroom.
+    <input id="next-keyword" type="text" isInput/>
+    <button id="search-next-button" isMessage isButton>search</button>
+
+    <p id="next-instruction" class="blackboard">
+        Welcome to my room, go straight to find washroom.
     </p>
 
-    <img id='current-location' src="images/sample-location.jpeg" isImage/>
+    <div id="empty-div-to-push-button-to-bottom"></div>
+    <button id="next" isButton>next</button>
 
-    <span id="next" class="float-over-page" isButton>next</span>
-  </section>
+</section>
 
 </body>
 

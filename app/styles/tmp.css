@@ -1,11 +1,27 @@
 /*this css must is for development pupose only*/
 
-#body {
-  background-color: #ffff00;
+#next-instruction{
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
-section{
-  padding: 2%;
+#guide-view{
+  padding-top: 5%;
+}
+
+.sample-location-image{
+  background-image: url(../images/sample-location.jpeg);
+}
+
+#empty-div-to-push-button-to-bottom{
+  height: 70%;
+}
+/******************************************************************************************************
+Colors for testing
+******************************************************************************************************
+*/
+#body {
+  background-color: #ffff00;
 }
 
 #home-page {
@@ -19,23 +35,4 @@ section{
 #guide-view {
   background-color: #d9534f;
 }
-
-#current-location {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/*next button on guide view*/
-#next {
-  position: relative;
-  top: -50px;
-  left: 45%;
-
-  background-color: #f0ad4e;
-}
-
-#next-instruction{
-  width: 85%;
-}
-
-
+/******************************************************************************************************/
