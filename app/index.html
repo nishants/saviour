@@ -18,7 +18,7 @@
 <body id='saviour' class="full-screen" isApp>
 
   <section id='home-page' class="full-screen" isContainer >
-    <p id="loader-logo" class="">Loading....</p>
+    <p id="loader-logo" class="" isMessage>Loading....</p>
   </section>
 
   <section id="search-home" class="full-screen"  isContainer>
@@ -27,8 +27,15 @@
     <span id='search' isButton/>
   </section>
 
-  <section id='guide-view' class="full-screen" isContainer>
-    <img id='current-location' src="" isImage/>
+  <section  id='guide-view' class="full-screen" isContainer>
+    <form   id="search-panel" isForm>
+      <input  id="next-keyword" type="text" isInput/>
+      <span   id="search-next-button" isMessage isButton>search</span>
+    </form>
+
+    <img id='current-location' src="images/sample-location.jpg" isImage/>
+    <span id="next" isButton>next</span>
+
   </section>
 
 </body>

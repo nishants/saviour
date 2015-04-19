@@ -15,3 +15,18 @@
 #guide-view{
   background-color: #d9534f;
 }
+
+#current-location{
+  max-width:100%;
+  max-height:100%;
+}
+
+/*next button on guide view*/
+#next{
+  z-index: 1;
+  position: relative;
+  top: -50px;
+  left: 45%;
+
+  background-color: #f0ad4e;
+}
