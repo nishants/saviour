@@ -16,6 +16,10 @@
 #empty-div-to-push-button-to-bottom{
   height: 70%;
 }
+
+#getmeto-logo{
+  color: #3276b1;
+}
 /******************************************************************************************************
 Colors for testing
 ******************************************************************************************************
@@ -24,11 +28,11 @@ Colors for testing
   background-color: #ffff00;
 }
 
-#home-page {
+#app-loader-page {
   background-color: #285e8e;
 }
 
-#search-home {
+#home-page {
   background-color: #449d44;
 }
 
