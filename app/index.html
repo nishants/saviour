@@ -17,15 +17,19 @@
 
 <body id='saviour' class="full-screen" isApp>
 
-    <section id='app-loader-page' class="full-screen" isContainer>
-        <p id="loader-logo" class="" isMessage>Loading....</p>
+    <section id='app-loader-page' class="full-screen centered-display" isContainer>
+        <div id="loader-outline">
+            <div id="moving-bar" ></div>
+        </div>
+
+        <p id="lading-message" isMessage>Please wait....</p>
     </section>
 
     <section id="home-page" class=" full-screen
                                       centered-display" isContainer>
-        <p id="getmeto-logo" isMessage>get me to</p>
-        <input id='keyword' type="text" placeholder="cubicle id,conference room, etc" isInput/>
-        <span id='search' isButton/>
+        <p id="getmeto-logo" class="saviour-blue no-margin" isMessage>get me to</p>
+        <input id='keyword' type="search" placeholder="cubicle id,conference room, etc" isInput/>
+        <button id='search' isButton>go</button>
     </section>
 
     <section id='guide-view'
@@ -34,8 +38,8 @@
                      img-background
                      sample-location-image" isContainer>
 
-        <input id="next-keyword" type="text" isInput/>
-        <button id="search-next-button" isMessage isButton>search</button>
+        <input id="next-keyword" type="search" isInput/>
+        <button id="search-next-button" isMessage isButton>go</button>
 
         <p id="next-instruction" class="blackboard">
             Welcome to my room, go straight to find washroom.

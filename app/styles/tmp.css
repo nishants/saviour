@@ -1,8 +1,11 @@
-/*this css must is for development pupose only*/
-
+/* *******************************************************************************************/
 #home-page{
   padding-top: 30%;
   font-size: 32px;
+}
+
+#app-loader-page{
+  padding-top: 40%;
 }
 
 #next-instruction{
@@ -22,8 +25,37 @@
   height: 70%;
 }
 
-#getmeto-logo{
-  color: #3276b1;
+/*this css must is for development pupose only*/
+/*******************************************************************************************
+Progress Bar
+*******************************************************************************************/
+#moving-bar{
+  width: 10px;
+  height: 20px;
+  background-color: #4cc74c;
+
+  position: relative;
+  -webkit-animation: goright 1s infinite;  /* Chrome, Safari, Opera */
+  -webkit-animation-timing-function: linear;  /* Chrome, Safari, Opera */
+  animation: goright 1s infinite;
+  animation-timing-function: linear;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes goright {
+  from {left: 0px;}
+  to {left: 800px;}
+}
+
+@keyframes goright {
+  from {left: 0px;}
+  to {left: 800px;}
+}
+
+#loader-outline{
+  background: #449d44;
+  height: 20px;
+  width: 800px;
 }
 /******************************************************************************************************
 Colors for testing
@@ -31,10 +63,6 @@ Colors for testing
 */
 #body {
   background-color: #ffff00;
-}
-
-#app-loader-page {
-  background-color: #285e8e;
 }
 
 #guide-view {
