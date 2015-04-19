@@ -1,5 +1,10 @@
 /*this css must is for development pupose only*/
 
+#home-page{
+  padding-top: 30%;
+  font-size: 32px;
+}
+
 #next-instruction{
   margin-left: 2%;
   margin-right: 2%;
@@ -30,10 +35,6 @@ Colors for testing
 
 #app-loader-page {
   background-color: #285e8e;
-}
-
-#home-page {
-  background-color: #449d44;
 }
 
 #guide-view {
