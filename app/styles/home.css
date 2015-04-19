@@ -1,3 +1,18 @@
-.full-screen{
-   height:100vh; /*Each section of the size of viewport.*/
+.full-screen {
+  height: 100vh; /*Each section of the size of viewport.*/
+}
+
+.blackboard {
+  color: #f1f0f0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.float-over-page {
+  z-index: 1;
+  position: absolute;
+}
+
+.card {
+  padding: 2%;
+  width: 95%;
 }
