@@ -1,29 +1,3 @@
-.white-text{
-  color: rgb(245, 243, 243);
-}
-.blue-color-fill{
-  background-color: rgb(125, 125, 244)
-}
-
-.sharp-border{
-  border-radius: 0;
-}
-/*.transparent-bg{
-    background: transparent;
-}*/
-
-.no-left-border{
-  border-left: none;
-}
-
-.no-right-border{
-  border-right: none;
-}
-
-.overlap-left{
-  position: relative;
-  right: 30px;
-}
-.two-lines-height{
-    line-height: 2;
+.full-screen{
+   height:100vh; /*Each section of the size of viewport.*/
 }

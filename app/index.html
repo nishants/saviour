@@ -8,48 +8,29 @@
   <meta name="description" content="An indoor navigation platform.">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="styles/lib/bootstrap.css">
   <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/tmp.css">
 
   <script src="scripts/lib/jquery.js"></script>
   <script src="scripts/app.js"></script>
 </head>
 
-<div id='saviour' isApp>
+<body id='saviour' class="full-screen" isApp>
 
-  <nav id="search-bar" class="input-group" isForm>
-    <input id='keyword' type="text" class="form-control sharp-border no-right-border" placeholder="e.g. indigo retreat" isInput/>
-    <span id='search' class="input-group-addon blue-color-fill sharp-border no-left-border" isButton>
-      <span class="glyphicon glyphicon-search white-text">
-      </span>
-    </span>
-  </nav>
-
-  <section id='home-page' isContainer >
-
+  <section id='home-page' class="full-screen" isContainer >
+    <p id="loader-logo" class="">Loading....</p>
   </section>
 
+  <section id="search-home" class="full-screen"  isContainer>
+    <p isMessage>get me to</p>
+    <input id='keyword' type="text" placeholder="cubicle id,conference room, etc" isInput/>
+    <span id='search' isButton/>
+  </section>
 
-  <section id='guide-view' isContainer isHidden> <!-- Hidden by default -->
+  <section id='guide-view' class="full-screen" isContainer>
     <img id='current-location' src="" isImage/>
   </section>
 
-  <section id='directions-view' isContainer isHidden>
-  </section>
-
-  <section id='map-view' isContainer isHidden>
-  </section>
-
-  <div id='view-controls' isContainer isHidden>
-    <span id='show-directions-view' isButton ></span>
-    <span id='show-next' 						isButton isDisabled></span>
-    <span id='show-map-view' 				isButton ></span>
-
-    <!-- controls hidden by default(within their parent view)-->
-    <span id='show-guide-view' 			isButton isHidden></span>
-    <span id='back-to-home' 				isButton isHidden></span>
-  </div>
-
-</div>
+</body>
 
 </html>
