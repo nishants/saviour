@@ -1,4 +1,5 @@
-/* *******************************************************************************************/
+/*this css must only have style tmporarily, unless refactored
+into the css lib*/
 #home-page{
   padding-top: 30%;
   font-size: 32px;
@@ -20,38 +21,6 @@
   height: 70%;
 }
 
-/*this css must is for development pupose only*/
-/*******************************************************************************************
-Progress Bar
-*******************************************************************************************/
-#moving-bar{
-  width: 10px;
-  height: 20px;
-  background-color: #4cc74c;
-
-  position: relative;
-  -webkit-animation: goright 1s infinite;  /* Chrome, Safari, Opera */
-  -webkit-animation-timing-function: linear;  /* Chrome, Safari, Opera */
-  animation: goright 1s infinite;
-  animation-timing-function: linear;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes goright {
-  from {left: 0px;}
-  to {left: 800px;}
-}
-
-@keyframes goright {
-  from {left: 0px;}
-  to {left: 800px;}
-}
-
-#loader-outline{
-  background: #449d44;
-  height: 20px;
-  width: 800px;
-}
 /******************************************************************************************************
 Colors for testing
 ******************************************************************************************************

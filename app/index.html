@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/tmp.css">
+    <link rel="stylesheet" href="styles/loader.css">
 
     <script src="scripts/lib/jquery.js"></script>
     <script src="scripts/app.js"></script>
@@ -18,11 +19,13 @@
 <body id='saviour' class="full-screen" isApp>
 
     <section id='app-loader-page' class="full-screen centered-display" isContainer>
-        <div id="loader-outline">
-            <div id="moving-bar" ></div>
+        <div class="loader-animation">
+            <div class="first  loader-bar"></div>
+            <div class="second loader-bar"></div>
+            <div class="third  loader-bar"></div>
         </div>
 
-        <p id="lading-message" isMessage>Please wait....</p>
+        <p id="loading-message" isMessage>Loading..</p>
     </section>
 
     <section id="home-page" class=" full-screen
