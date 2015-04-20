@@ -10,15 +10,15 @@ Loader Bar
 }
 
 .loader-bar.first{
-  animation: loader1 3s infinite ease-in;
+  animation: loader1 2s infinite ease-in;
 }
 
 .loader-bar.second{
-  animation: loader2 3s infinite ease-in;
+  animation: loader2 2s infinite ease-in;
 }
 
 .loader-bar.third{
-  animation: loader3 3s infinite ease-in;
+  animation: loader3 2s infinite ease-in;
 }
 /*R  		-> rgba(153, 0, 0, 1)*/
 /*G  		-> rgba(51, 153, 51,1)*/
