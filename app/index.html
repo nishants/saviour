@@ -14,12 +14,15 @@
 
     <script src="scripts/lib/jquery.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/promise.js"></script>
     <script src="scripts/typeahead.js"></script>
+    <script src="scripts/search-service.js"></script>
 </head>
 
 <body id='saviour' class="full-screen" isApp>
 
-    <section id='app-loader-page' class="full-screen centered-display" isContainer>
+    <section id='app-loader-page' 
+             class="full-screen centered-display" isContainer>
         <div class="loader-animation">
             <div class="first  loader-bar"></div>
             <div class="second loader-bar"></div>
@@ -62,9 +65,15 @@
     
     <datalist id="search-keywords" name="search-keywords"></datalist>
     <script>
-    
+        var registerKeywords = function(response){
+            saviour.SearchKeywords.add(response.data.keywords);
+        };
+        var serverDown = function(){alert("failed to connect to server");}
+        
         var onload = function(){
-            saviour.SearchKeywords.add(["one", "two", "three", "four", "five", "six", "seven"]);
+            saviour.searchService.getAllKeywords()
+            .ok(registerKeywords)
+            .error(serverDown);
         };
         
         $(document).ready(onload);
