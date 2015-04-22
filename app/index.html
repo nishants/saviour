@@ -14,6 +14,7 @@
 
     <script src="scripts/lib/jquery.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/typeahead.js"></script>
 </head>
 
 <body id='saviour' class="full-screen" isApp>
@@ -31,7 +32,11 @@
     <section id="home-page" class=" full-screen
                                       centered-display" isContainer>
         <p id="getmeto-logo" class="saviour-blue no-margin" isMessage>get me to</p>
-        <input id='keyword' type="search" placeholder="cubicle id,conference room, etc" isInput/>
+        <input  id='search-keyword' 
+                type="search" 
+                placeholder="cubicle id,conference room, etc" 
+                list = "search-keywords"
+                isInput/>
         <button id='search' isButton>go</button>
     </section>
 
@@ -41,7 +46,9 @@
                      img-background
                      sample-location-image" isContainer>
 
-        <input id="next-keyword" type="search" isInput/>
+        <input  id="next-keyword" 
+                list = "search-keywords" 
+                type="search" isInput/>
         <button id="search-next-button" isMessage isButton>go</button>
 
         <p id="next-instruction" class="blackboard">
@@ -52,7 +59,16 @@
         <button id="next" isButton>next</button>
 
     </section>
-
+    
+    <datalist id="search-keywords" name="search-keywords"></datalist>
+    <script>
+    
+        var onload = function(){
+            saviour.SearchKeywords.add(["one", "two", "three", "four", "five", "six", "seven"]);
+        };
+        
+        $(document).ready(onload);
+    </script>
 </body>
 
 </html>

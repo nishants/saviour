@@ -1,3 +1,14 @@
+
+--------------------------------------------------------------
+Type ahead : 
+options : twitterr typeahead
+					jquery mobile autocomplete (fucking flickers when selected)
+					HTML5 datalist 
+					
+Verdict : using datalist -because of  native html5, and lack of insight 
+				so as to why do more ?
+--------------------------------------------------------------
+
 Create own framework.
 no MVC, instead following layers
 	1 : Dom Layer(state of html document) 	- abstracts java dom manipulation i.e. abstracts frameworks like jquery.
